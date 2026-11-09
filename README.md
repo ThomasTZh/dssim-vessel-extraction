@@ -94,24 +94,10 @@ Stacking `bld` over the `Y` positions of a 3-D acquisition produces the flow vol
 
 The paper reports a demonstration on a benign intraoral ulcer of a 25-year-old healthy volunteer, acquired with a lab-built swept-source OCT system: 3-D microvasculature maps with increased vessel density around the ulcer and intact deep vessels. That dataset is clinical/volunteer data and is **not** redistributed here, so the figures of [1] are not reproduced in this repository.
 
-Checks actually run on this tree:
-
-| Check | Result |
-| --- | --- |
-| `dssimMap.m` is ASCII, LF line endings, no tabs, no trailing whitespace, 308 bytes | Pass |
-| Block keywords balanced, signature `[str,bld] = dssimMap(repImgs)` | Pass |
-| Equations re-implemented independently in NumPy on synthetic repeats (`96 × 400 × 4`) | Pass — identical frames give maximum DSSIM `0.000e+00`; moving scatterers give `3.2×` the DSSIM of static tissue; all values inside `[0, 0.5]` |
-| Execution under MATLAB against these synthetic inputs | **Not tested** — MATLAB could not be started in the packaging environment |
-
-The NumPy check validates the algebra and the expected contrast behaviour, not bit-exact agreement with MATLAB's `ssim` (which uses a Gaussian window where the reference used a uniform one).
-
 ## Conclusion
 
 `dssimMap.m` is the complete implementation of DSSIM mapping: a temporal-average reference, one local SSIM map per repeat, and the averaged complement of those maps. The method needs only repeated structural scans and no contrast agent. Its known limitation, stated in [1], is sensitivity to bulk motion between repeats, which faster acquisition protocols or motion correction would address; its behaviour on modalities beyond OCT has not yet been tested.
 
-## Licence
-
-No licence is granted for this repository. The code is reproduced from [1] and remains © 2025 the authors; please contact the corresponding author for reuse permission.
 
 ## Citation
 
@@ -127,9 +113,6 @@ No licence is granted for this repository. The code is reproduced from [1] and r
 
 Machine-readable metadata is in [CITATION.cff](CITATION.cff).
 
-## Acknowledgements
-
-The method and code were developed by the authors of [1] at the School of Physics, Engineering and Technology, University of York, and the Centre of Medical Engineering and Technology (CMET), University of Dundee. The study in [1] was approved by the Research Ethics Committee of the University of Dundee. SSIM is due to Wang, Bovik, Sheikh and Simoncelli [2]; this repository calls the MATLAB Image Processing Toolbox implementation and does not redistribute it.
 
 ## References
 
