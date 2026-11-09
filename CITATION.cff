@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper it implements."
+title: "Open-Sourced Vessel Extraction Algorithm Using Structural Dissimilarity Mapping"
+type: conference-paper
+authors:
+  - family-names: Zhang
+    given-names: Tianyu
+    affiliation: "School of Physics, Engineering and Technology, University of York"
+  - family-names: Li
+    given-names: Chunhui
+    affiliation: "Centre of Medical Engineering and Technology (CMET), University of Dundee"
+  - family-names: Liao
+    given-names: Jinpeng
+    affiliation: "School of Physics, Engineering and Technology, University of York"
+  - family-names: Huang
+    given-names: Zhihong
+    affiliation: "School of Physics, Engineering and Technology, University of York"
+  - family-names: Feng
+    given-names: Zhengshuyi
+    affiliation: "School of Physics, Engineering and Technology, University of York"
+year: 2025
+collection-title: "2025 IEEE International Ultrasonics Symposium (IUS)"
+doi: "10.1109/IUS62464.2025.11201682"
+url: "https://doi.org/10.1109/IUS62464.2025.11201682"
+repository-code: "https://github.com/ThomasTZh/dssim-vessel-extraction"
+keywords:
+  - structural dissimilarity
+  - SSIM
+  - DSSIM
+  - OCT angiography
+  - microvasculature
+  - contrast-free angiography
