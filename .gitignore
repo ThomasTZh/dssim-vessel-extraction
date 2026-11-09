@@ -1,0 +1,7 @@
+# MATLAB autosave, backup and build artefacts
+*.asv
+*.m~
+*.slxc
+*.mat
+slprj/
+codegen/
